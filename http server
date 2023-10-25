@@ -1,38 +1,80 @@
-
+dna-user@pop-os:~/Desktop/HTTP SERVER$ npx ts-node ./src/index.ts
+[
+  { first_name: 'Kit', last_name: 'Balladares' },
+  { first_name: 'Kit', last_name: 'Balladares' },
+  { first_name: 'Angel', last_name: 'Belangel' },
+  { first_name: 'Jake', last_name: 'Belangel' },
+  { first_name: 'Lisa', last_name: 'Belangel' },
+  { first_name: 'Lisa', last_name: 'Belangel' },
+  { first_name: 'Ryle', last_name: 'Santos' },
+  { first_name: 'Ryle', last_name: 'Santos' }
+]
+User information saved successfully
+dna-user@pop-os:~/Desktop/HTTP SERVER$ npx ts-node ./src/index.ts
+User information saved successfully
+[
+  { first_name: 'Kit', last_name: 'Balladares' },
+  { first_name: 'Kit', last_name: 'Balladares' },
+  { first_name: 'Angel', last_name: 'Belangel' },
+  { first_name: 'Jake', last_name: 'Belangel' },
+  { first_name: 'Lisa', last_name: 'Belangel' },
+  { first_name: 'Lisa', last_name: 'Belangel' },
+  { first_name: 'Ryle', last_name: 'Santos' },
+  { first_name: 'Ryle', last_name: 'Santos' },
+  { first_name: 'Ryle', last_name: 'Santos' },
+  { first_name: 'Ryle', last_name: 'Santos' }
+]
+dna-user@pop-os:~/Desktop/HTTP SERVER$ npx ts-node ./src/index.ts
+[
+  { first_name: 'Kit', last_name: 'Balladares' },
+  { first_name: 'Kit', last_name: 'Balladares' },
+  { first_name: 'Angel', last_name: 'Belangel' },
+  { first_name: 'Jake', last_name: 'Belangel' },
+  { first_name: 'Lisa', last_name: 'Belangel' },
+  { first_name: 'Lisa', last_name: 'Belangel' },
+  { first_name: 'Ryle', last_name: 'Santos' },
+  { first_name: 'Ryle', last_name: 'Santos' },
+  { first_name: 'Ryle', last_name: 'Santos' },
+  { first_name: 'Ryle', last_name: 'Santos' }
+]
+User information saved successfully
 dna-user@pop-os:~/Desktop/HTTP SERVER$ npx ts-node ./src/server.ts
-/home/dna-user/node_modules/ts-node/src/index.ts:859
-    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
-           ^
-TSError: ⨯ Unable to compile TypeScript:
-src/server.ts:1:44 - error TS7016: Could not find a declaration file for module 'express'. '/home/dna-user/Desktop/HTTP SERVER/node_modules/express/index.js' implicitly has an 'any' type.
-  Try `npm i --save-dev @types/express` if it exists or add a new declaration (.d.ts) file containing `declare module 'express';`
-
-1 import express, { Request, Response } from 'express';
-                                             ~~~~~~~~~
-src/server.ts:3:24 - error TS7016: Could not find a declaration file for module 'body-parser'. '/home/dna-user/Desktop/HTTP SERVER/node_modules/body-parser/index.js' implicitly has an 'any' type.
-  Try `npm i --save-dev @types/body-parser` if it exists or add a new declaration (.d.ts) file containing `declare module 'body-parser';`
-
-3 import bodyParser from 'body-parser';
-                         ~~~~~~~~~~~~~
-
-    at createTSError (/home/dna-user/node_modules/ts-node/src/index.ts:859:12)
-    at reportTSError (/home/dna-user/node_modules/ts-node/src/index.ts:863:19)
-    at getOutput (/home/dna-user/node_modules/ts-node/src/index.ts:1077:36)
-    at Object.compile (/home/dna-user/node_modules/ts-node/src/index.ts:1433:41)
-    at Module.m._compile (/home/dna-user/node_modules/ts-node/src/index.ts:1617:30)
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (/home/dna-user/Desktop/HTTP SERVER/node_modules/express/lib/application.js:635:24)
+    at Object.<anonymous> (/home/dna-user/Desktop/HTTP SERVER/src/server.ts:59:5)
+    at Module._compile (node:internal/modules/cjs/loader:1241:14)
+    at Module.m._compile (/home/dna-user/node_modules/ts-node/src/index.ts:1618:23)
     at Module._extensions..js (node:internal/modules/cjs/loader:1295:10)
     at Object.require.extensions.<computed> [as .ts] (/home/dna-user/node_modules/ts-node/src/index.ts:1621:12)
-    at Module.load (node:internal/modules/cjs/loader:1091:32)
-    at Function.Module._load (node:internal/modules/cjs/loader:938:12)
-    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:83:12) {
-  diagnosticCodes: [ 7016, 7016 ]
+    at Module.load (node:internal/modules/cjs/loader:1091:32) {
+  code: 'EADDRINUSE',
+  errno: -98,
+  syscall: 'listen',
+  address: '::',
+  port: 3000
 }
 dna-user@pop-os:~/Desktop/HTTP SERVER$ 
 
 
 
 
-server.ts code 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 import express, { Request, Response } from 'express';
 import fs from 'fs';
@@ -99,7 +141,90 @@ app.listen(port, () => {
 
 
 
-package.json
+
+
+
+
+
+
+
+
+
+
+
+
+
+import express, { Request, Response } from 'express';
+import fs from 'fs';
+import bodyParser from 'body-parser';
+
+//AN INTERFACE OF USER DATA 
+interface UserData {
+  first_name: string;
+  last_name: string;
+}
+
+const app = express();
+const port = 3000;
+
+app.use(bodyParser.json()); 
+
+// DEFINE A ROUTE FOR SAVING USER DATA WITH POST REQUEST
+app.post('/save', (req: Request, res: Response) => {
+  const userData: UserData = req.body; 
+  // save the user data to user.json
+  fs.readFile('./src/user.json', 'utf8', (err, data) => {
+    if (err) {
+      // If the file doesn't exist, create an empty array
+      const users: UserData[] = [];
+      users.push(userData);
+      fs.writeFile('./src/user.json', JSON.stringify(users, null, 2), (err) => {
+        if (err) {
+          res.status(500).send('Error saving user information');
+        } else {
+          res.send('User information saved successfully');
+        }
+      });
+    } else 
+         {
+      // modify the content append the new user data if the file exist 
+      const users: UserData[] = JSON.parse(data);
+      users.push(userData);
+      fs.writeFile('./src/user.json', JSON.stringify(users, null, 2), (err) => {
+        if (err) {
+          res.status(500).send('Error saving user information');
+        } else {
+          res.send('User information saved successfully');
+        }
+      });
+    }
+  });
+});
+
+// route for getting user information with GET request
+app.get('/get', (req: Request, res: Response) => {
+  fs.readFile('./src/user.json', 'utf8', (err, data) => {
+    if (err) {
+      res.status(500).send('Error reading user information');
+    } else {
+      res.json(JSON.parse(data));
+    }
+  });
+});
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
+
+
+
+
+
+
+
+
+
+
 
 
 {
@@ -117,5 +242,9 @@ package.json
     "axios": "^1.5.1",
     "body-parser": "^1.20.2",
     "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.19.4",
+    "@types/express": "^4.17.20"
   }
 }
