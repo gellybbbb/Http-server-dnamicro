@@ -1,0 +1,373 @@
+dna-user@pop-os:~/Desktop/Http-server-dnamicro$ npm install @types/d3 --save-dev
+
+added 32 packages, and audited 116 packages in 8s
+
+12 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+dna-user@pop-os:~/Desktop/Http-server-dnamicro$ npx ts-node ./src/index.ts
+AxiosError [AggregateError]
+    at Function.AxiosError.from (/home/dna-user/Desktop/Http-server-dnamicro/node_modules/axios/lib/core/AxiosError.js:89:14)
+    at RedirectableRequest.handleRequestError (/home/dna-user/Desktop/Http-server-dnamicro/node_modules/axios/lib/adapters/http.js:593:25)
+    at RedirectableRequest.emit (node:events:514:28)
+    at RedirectableRequest.emit (node:domain:488:12)
+    at ClientRequest.eventHandlers.<computed> (/home/dna-user/Desktop/Http-server-dnamicro/node_modules/follow-redirects/index.js:14:24)
+    at ClientRequest.emit (node:events:514:28)
+    at ClientRequest.emit (node:domain:488:12)
+    at Socket.socketErrorListener (node:_http_client:495:9)
+    at Socket.emit (node:events:514:28)
+    at Socket.emit (node:domain:488:12) {
+  code: 'ECONNREFUSED',
+  errors: [
+    Error: connect ECONNREFUSED ::1:3000
+        at createConnectionError (node:net:1634:14)
+        at afterConnectMultiple (node:net:1664:40) {
+      errno: -111,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3000
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3000
+        at createConnectionError (node:net:1634:14)
+        at afterConnectMultiple (node:net:1664:40) {
+      errno: -111,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3000
+    }
+  ],
+  config: {
+    transitional: {
+      silentJSONParsing: true,
+      forcedJSONParsing: true,
+      clarifyTimeoutError: false
+    },
+    adapter: [ 'xhr', 'http' ],
+    transformRequest: [ [Function: transformRequest] ],
+    transformResponse: [ [Function: transformResponse] ],
+    timeout: 0,
+    xsrfCookieName: 'XSRF-TOKEN',
+    xsrfHeaderName: 'X-XSRF-TOKEN',
+    maxContentLength: -1,
+    maxBodyLength: -1,
+    env: { FormData: [Function], Blob: [class Blob] },
+    validateStatus: [Function: validateStatus],
+    headers: Object [AxiosHeaders] {
+      Accept: 'application/json, text/plain, */*',
+      'Content-Type': 'application/json',
+      'User-Agent': 'axios/1.5.1',
+      'Content-Length': '42',
+      'Accept-Encoding': 'gzip, compress, deflate, br'
+    },
+    method: 'post',
+    url: 'http://localhost:3000/save',
+    data: '{"first_name":"Ryle","last_name":"Santos"}'
+  },
+  request: <ref *1> Writable {
+    _writableState: WritableState {
+      state: 802924,
+      highWaterMark: 16384,
+      defaultEncoding: 'utf8',
+      length: 0,
+      corked: 0,
+      onwrite: [Function: bound onwrite],
+      writecb: null,
+      writelen: 0,
+      afterWriteTickInfo: null,
+      buffered: [],
+      bufferedIndex: 0,
+      pendingcb: 0,
+      errored: null,
+      [Symbol(kOnFinished)]: []
+    },
+    _events: [Object: null prototype] {
+      response: [Function: handleResponse],
+      error: [Function: handleRequestError],
+      socket: [Function: handleRequestSocket]
+    },
+    _eventsCount: 3,
+    _maxListeners: undefined,
+    _options: {
+      maxRedirects: 21,
+      maxBodyLength: Infinity,
+      protocol: 'http:',
+      path: '/save',
+      method: 'POST',
+      headers: [Object: null prototype],
+      agents: [Object],
+      auth: undefined,
+      family: undefined,
+      beforeRedirect: [Function: dispatchBeforeRedirect],
+      beforeRedirects: [Object],
+      hostname: 'localhost',
+      port: '3000',
+      agent: undefined,
+      nativeProtocols: [Object],
+      pathname: '/save'
+    },
+    _ended: false,
+    _ending: true,
+    _redirectCount: 0,
+    _redirects: [],
+    _requestBodyLength: 42,
+    _requestBodyBuffers: [ [Object] ],
+    _onNativeResponse: [Function (anonymous)],
+    _currentRequest: ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 7,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      destroyed: false,
+      _last: false,
+      chunkedEncoding: false,
+      shouldKeepAlive: true,
+      maxRequestsOnConnectionReached: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: true,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      strictContentLength: false,
+      _contentLength: '42',
+      _hasBody: true,
+      _trailer: '',
+      finished: false,
+      _headerSent: true,
+      _closed: false,
+      socket: [Socket],
+      _header: 'POST /save HTTP/1.1\r\n' +
+        'Accept: application/json, text/plain, */*\r\n' +
+        'Content-Type: application/json\r\n' +
+        'User-Agent: axios/1.5.1\r\n' +
+        'Content-Length: 42\r\n' +
+        'Accept-Encoding: gzip, compress, deflate, br\r\n' +
+        'Host: localhost:3000\r\n' +
+        'Connection: keep-alive\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: nop],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'POST',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      joinDuplicateHeaders: undefined,
+      path: '/save',
+      _ended: false,
+      res: null,
+      aborted: false,
+      timeoutCb: [Function: emitRequestTimeout],
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: 'localhost',
+      protocol: 'http:',
+      _redirectable: [Circular *1],
+      [Symbol(kCapture)]: false,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kOutHeaders)]: [Object: null prototype],
+      [Symbol(errored)]: null,
+      [Symbol(kHighWaterMark)]: 16384,
+      [Symbol(kRejectNonStandardBodyWrites)]: false,
+      [Symbol(kUniqueHeaders)]: null
+    },
+    _currentUrl: 'http://localhost:3000/save',
+    [Symbol(kCapture)]: false
+  },
+  cause: AggregateError
+      at internalConnectMultiple (node:net:1114:18)
+      at afterConnectMultiple (node:net:1667:5) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+AxiosError [AggregateError]
+    at Function.AxiosError.from (/home/dna-user/Desktop/Http-server-dnamicro/node_modules/axios/lib/core/AxiosError.js:89:14)
+    at RedirectableRequest.handleRequestError (/home/dna-user/Desktop/Http-server-dnamicro/node_modules/axios/lib/adapters/http.js:593:25)
+    at RedirectableRequest.emit (node:events:514:28)
+    at RedirectableRequest.emit (node:domain:488:12)
+    at ClientRequest.eventHandlers.<computed> (/home/dna-user/Desktop/Http-server-dnamicro/node_modules/follow-redirects/index.js:14:24)
+    at ClientRequest.emit (node:events:514:28)
+    at ClientRequest.emit (node:domain:488:12)
+    at Socket.socketErrorListener (node:_http_client:495:9)
+    at Socket.emit (node:events:514:28)
+    at Socket.emit (node:domain:488:12) {
+  code: 'ECONNREFUSED',
+  errors: [
+    Error: connect ECONNREFUSED ::1:3000
+        at createConnectionError (node:net:1634:14)
+        at afterConnectMultiple (node:net:1664:40) {
+      errno: -111,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3000
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3000
+        at createConnectionError (node:net:1634:14)
+        at afterConnectMultiple (node:net:1664:40) {
+      errno: -111,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3000
+    }
+  ],
+  config: {
+    transitional: {
+      silentJSONParsing: true,
+      forcedJSONParsing: true,
+      clarifyTimeoutError: false
+    },
+    adapter: [ 'xhr', 'http' ],
+    transformRequest: [ [Function: transformRequest] ],
+    transformResponse: [ [Function: transformResponse] ],
+    timeout: 0,
+    xsrfCookieName: 'XSRF-TOKEN',
+    xsrfHeaderName: 'X-XSRF-TOKEN',
+    maxContentLength: -1,
+    maxBodyLength: -1,
+    env: { FormData: [Function], Blob: [class Blob] },
+    validateStatus: [Function: validateStatus],
+    headers: Object [AxiosHeaders] {
+      Accept: 'application/json, text/plain, */*',
+      'Content-Type': undefined,
+      'User-Agent': 'axios/1.5.1',
+      'Accept-Encoding': 'gzip, compress, deflate, br'
+    },
+    method: 'get',
+    url: 'http://localhost:3000/get',
+    data: undefined
+  },
+  request: <ref *1> Writable {
+    _writableState: WritableState {
+      state: 802924,
+      highWaterMark: 16384,
+      defaultEncoding: 'utf8',
+      length: 0,
+      corked: 0,
+      onwrite: [Function: bound onwrite],
+      writecb: null,
+      writelen: 0,
+      afterWriteTickInfo: null,
+      buffered: [],
+      bufferedIndex: 0,
+      pendingcb: 0,
+      errored: null,
+      [Symbol(kOnFinished)]: []
+    },
+    _events: [Object: null prototype] {
+      response: [Function: handleResponse],
+      error: [Function: handleRequestError],
+      socket: [Function: handleRequestSocket]
+    },
+    _eventsCount: 3,
+    _maxListeners: undefined,
+    _options: {
+      maxRedirects: 21,
+      maxBodyLength: Infinity,
+      protocol: 'http:',
+      path: '/get',
+      method: 'GET',
+      headers: [Object: null prototype],
+      agents: [Object],
+      auth: undefined,
+      family: undefined,
+      beforeRedirect: [Function: dispatchBeforeRedirect],
+      beforeRedirects: [Object],
+      hostname: 'localhost',
+      port: '3000',
+      agent: undefined,
+      nativeProtocols: [Object],
+      pathname: '/get'
+    },
+    _ended: true,
+    _ending: true,
+    _redirectCount: 0,
+    _redirects: [],
+    _requestBodyLength: 0,
+    _requestBodyBuffers: [],
+    _onNativeResponse: [Function (anonymous)],
+    _currentRequest: ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 7,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      destroyed: false,
+      _last: true,
+      chunkedEncoding: false,
+      shouldKeepAlive: true,
+      maxRequestsOnConnectionReached: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: false,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      strictContentLength: false,
+      _contentLength: 0,
+      _hasBody: true,
+      _trailer: '',
+      finished: true,
+      _headerSent: true,
+      _closed: false,
+      socket: [Socket],
+      _header: 'GET /get HTTP/1.1\r\n' +
+        'Accept: application/json, text/plain, */*\r\n' +
+        'User-Agent: axios/1.5.1\r\n' +
+        'Accept-Encoding: gzip, compress, deflate, br\r\n' +
+        'Host: localhost:3000\r\n' +
+        'Connection: keep-alive\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: nop],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'GET',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      joinDuplicateHeaders: undefined,
+      path: '/get',
+      _ended: false,
+      res: null,
+      aborted: false,
+      timeoutCb: [Function: emitRequestTimeout],
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: 'localhost',
+      protocol: 'http:',
+      _redirectable: [Circular *1],
+      [Symbol(kCapture)]: false,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kOutHeaders)]: [Object: null prototype],
+      [Symbol(errored)]: null,
+      [Symbol(kHighWaterMark)]: 16384,
+      [Symbol(kRejectNonStandardBodyWrites)]: false,
+      [Symbol(kUniqueHeaders)]: null
+    },
+    _currentUrl: 'http://localhost:3000/get',
+    [Symbol(kCapture)]: false
+  },
+  cause: AggregateError
+      at internalConnectMultiple (node:net:1114:18)
+      at afterConnectMultiple (node:net:1667:5) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+dna-user@pop-os:~/Desktop/Http-server-dnamicro$ 
